@@ -67,7 +67,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/MangoAppsAps/documentarian"
+            "url": "git@github.com:MangoAppsAps/documentarian.git"
         }
     ],
     "config": {
