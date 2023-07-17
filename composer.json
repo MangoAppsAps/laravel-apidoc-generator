@@ -17,11 +17,11 @@
     "require": {
         "php": ">=7.2.0",
         "ext-json": "*",
-        "fzaninotto/faker": "dev-master",
-        "illuminate/console": "^5.7|^6.0|^7.0|^8.0|^9.0|^10.0",
-        "illuminate/routing": "^5.7|^6.0|^7.0|^8.0|^9.0|^10.0",
-        "illuminate/support": "^5.7|^6.0|^7.0|^8.0|^9.0|^10.0",
-        "league/flysystem": "^1.0",
+        "fakerphp/faker": "^1.23",
+        "illuminate/console": "^8.0|^9.0|^10.0",
+        "illuminate/routing": "^8.0|^9.0|^10.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "league/flysystem": "^3.0",
         "mangoapps/documentarian": "dev-master",
         "mpociot/reflection-docblock": "^1.0.1",
         "nunomaduro/collision": "^3.0|^4.0|^5.0|^6.0",
@@ -30,9 +30,8 @@
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "^0.2.1",
-        "laravel/lumen-framework": "^5.7|^6.0|^7.0|^8.0",
         "league/fractal": "^0.19.0",
-        "orchestra/testbench": "^3.7|^4.0|^5.0|^6.0",
+        "orchestra/testbench": "^6.0|^7.0|^8.0",
         "phpstan/phpstan": "^0.12.99",
         "phpunit/phpunit": "^9.0"
     },
