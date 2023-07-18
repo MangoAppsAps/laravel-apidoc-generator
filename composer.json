@@ -26,7 +26,7 @@
         "mpociot/reflection-docblock": "^1.0.1",
         "nunomaduro/collision": "^3.0|^4.0|^5.0|^6.0",
         "ramsey/uuid": "^3.8|^4.0",
-        "symfony/var-exporter": "^4.0|^5.0"
+        "symfony/var-exporter": "^4.0|^5.0|^6.0"
     },
     "require-dev": {
         "dms/phpunit-arraysubset-asserts": "^0.2.1",
