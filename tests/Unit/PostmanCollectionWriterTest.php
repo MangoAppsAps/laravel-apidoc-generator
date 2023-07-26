@@ -1,7 +1,8 @@
-<?php
+<?php /** @noinspection PhpUndefinedClassInspection */
 
 namespace Mpociot\ApiDoc\Tests\Unit;
 
+use Config;
 use Illuminate\Support\Collection;
 use Mpociot\ApiDoc\Writing\PostmanCollectionWriter;
 use Orchestra\Testbench\TestCase;
@@ -10,7 +11,7 @@ class PostmanCollectionWriterTest extends TestCase
 {
     public function testNameIsPresentInCollection()
     {
-        \Config::set('apidoc.postman', [
+        Config::set('apidoc.postman', [
             'name' => 'Test collection',
         ]);
 
@@ -22,7 +23,7 @@ class PostmanCollectionWriterTest extends TestCase
 
     public function testFallbackCollectionNameIsUsed()
     {
-        \Config::set('app.name', 'Fake App');
+        Config::set('app.name', 'Fake App');
 
         $writer = new PostmanCollectionWriter(new Collection(), '');
         $collection = $writer->getCollection();
@@ -32,7 +33,7 @@ class PostmanCollectionWriterTest extends TestCase
 
     public function testDescriptionIsPresentInCollection()
     {
-        \Config::set('apidoc.postman', [
+        Config::set('apidoc.postman', [
             'description' => 'A fake description',
         ]);
 
@@ -56,7 +57,7 @@ class PostmanCollectionWriterTest extends TestCase
             'type' => 'test',
             'test' => ['a' => 1],
         ];
-        \Config::set('apidoc.postman', [
+        Config::set('apidoc.postman', [
             'auth' => $auth,
         ]);
 
@@ -240,7 +241,7 @@ class PostmanCollectionWriterTest extends TestCase
      */
     public function testAuthAutoExcludesHeaderDefinitions(array $authConfig, array $expectedRemovedHeaders)
     {
-        \Config::set('apidoc.postman', [
+        Config::set('apidoc.postman', [
             'auth' => $authConfig,
         ]);
 
@@ -270,7 +271,7 @@ class PostmanCollectionWriterTest extends TestCase
 
     public function testApiKeyAuthIsIgnoredIfExplicitlyNotInHeader()
     {
-        \Config::set('apidoc.postman', [
+        Config::set('apidoc.postman', [
             'auth' => ['type' => 'apikey', 'apikey' => [
                 'value' => 'Test',
                 'key' => 'X-Authorization',

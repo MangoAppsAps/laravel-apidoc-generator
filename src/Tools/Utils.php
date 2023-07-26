@@ -3,8 +3,8 @@
 namespace Mpociot\ApiDoc\Tools;
 
 use Illuminate\Routing\Route;
-use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\VarExporter\VarExporter;
@@ -40,6 +40,7 @@ class Utils
                 1 => $action[1],
             ];
         }
+        return null;
     }
 
     /**
@@ -90,9 +91,9 @@ class Utils
     public static function deleteDirectoryAndContents($dir)
     {
         $dir = ltrim($dir, '/');
-        $adapter = new Local(realpath(__DIR__ . '/../../'));
+        $adapter = new LocalFilesystemAdapter(realpath(__DIR__ . '/../../'));
         $fs = new Filesystem($adapter);
-        $fs->deleteDir($dir);
+        $fs->deleteDirectory($dir);
     }
 
     /**

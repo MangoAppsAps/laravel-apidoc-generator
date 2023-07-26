@@ -134,7 +134,7 @@ class PostmanCollectionWriter
             'query' => collect($route['queryParameters'])->map(function ($parameter, $key) {
                 return [
                     'key' => $key,
-                    'value' => urlencode($parameter['value']),
+                    'value' => is_null($parameter['value']) ? null : urlencode($parameter['value']),
                     'description' => $parameter['description'],
                     // Default query params to disabled if they aren't required and have empty values
                     'disabled' => ! $parameter['required'] && empty($parameter['value']),

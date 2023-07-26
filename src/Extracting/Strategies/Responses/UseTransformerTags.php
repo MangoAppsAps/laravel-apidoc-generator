@@ -157,6 +157,14 @@ class UseTransformerTags extends Strategy
             // but the user might write it that way in a comment. Let's be safe.
             $type = ltrim($type, '\\');
 
+            if (method_exists($type, 'factory')) {
+                return $type::factory()->make();
+            }
+
+            if (! function_exists('factory')) {
+                throw new \Exception('Global "factory" method not found');
+            }
+
             return factory($type)->make();
         } catch (Exception $e) {
             if (Flags::$shouldBeVerbose) {
