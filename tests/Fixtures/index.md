@@ -20,7 +20,7 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
-#Group A
+# Group A
 
 
 <!-- START_264ee15c728df32e7ca6eedce5e42dcb -->
@@ -424,7 +424,7 @@ fetch(url, {
 
 <!-- END_55f321056bfc0de7269ac70e24eb84be -->
 
-#Other😎
+# Other😎
 
 
 <!-- START_c41db6ac2b427d8c29802195746cd91e -->

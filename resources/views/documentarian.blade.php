@@ -6,7 +6,7 @@
 <!-- END_INFO -->
 {!! $prependMd !!}
 @foreach($parsedRoutes as $groupName => $routes)
-#{!! $groupName !!}
+# {!! $groupName !!}
 {{-- We pick the first non-empty description we see. --}}
 {!! \Illuminate\Support\Arr::first($routes, function ($route) { return $route['metadata']['groupDescription'] !== ''; })['metadata']['groupDescription'] ?? '' !!}
 @foreach($routes as $parsedRoute)

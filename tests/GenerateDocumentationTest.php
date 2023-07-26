@@ -370,9 +370,9 @@ class GenerateDocumentationTest extends TestCase
         $this->artisan('apidoc:generate');
         $generatedMarkdown = file_get_contents(__DIR__ . '/../resources/docs/source/index.md');
 
-        $firstGroup1Occurrence = strpos($generatedMarkdown, '#1. Group 1');
-        $firstGroup2Occurrence = strpos($generatedMarkdown, '#2. Group 2');
-        $firstGroup10Occurrence = strpos($generatedMarkdown, '#10. Group 10');
+        $firstGroup1Occurrence = strpos($generatedMarkdown, '# 1. Group 1');
+        $firstGroup2Occurrence = strpos($generatedMarkdown, '# 2. Group 2');
+        $firstGroup10Occurrence = strpos($generatedMarkdown, '# 10. Group 10');
 
         $this->assertNotFalse($firstGroup1Occurrence);
         $this->assertNotFalse($firstGroup2Occurrence);
@@ -400,7 +400,7 @@ class GenerateDocumentationTest extends TestCase
 
         $this->assertNull($thrownException);
         $generatedMarkdown = file_get_contents(__DIR__ . '/../resources/docs/source/index.md');
-        $this->assertStringContainsString('Group A', $generatedMarkdown);
-        $this->assertStringContainsString('Group B', $generatedMarkdown);
+        $this->assertStringContainsString('# Group A', $generatedMarkdown);
+        $this->assertStringContainsString('# Group B', $generatedMarkdown);
     }
 }
